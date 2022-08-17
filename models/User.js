@@ -3,6 +3,8 @@ const { Schema, model } = require('mongoose');
 //create user schema
 const userSchema = new Schema({
   username: { type: String, unique: true, required: true, trim: true },
+  //use regex to validate email
+  //added message for error handling
   email: { type: String, required: true, unique: true, match: [/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/, 'email must be valid'] },
   thoughts: [{
     type: Schema.Types.ObjectId,
@@ -12,7 +14,7 @@ const userSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User',
   }],
-}
+},
 {
   toJSON: {
     virtuals: true,
