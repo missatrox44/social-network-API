@@ -10,24 +10,21 @@ const {
 } = require('../../controllers/userController');
 
 // /api/users
-router.route('/').get(getUsers).post(createUser);
+router.route('/').get(getUsers)
 
-// /api/users/:userId
-router.route('/:userId').get(getSingleUser);
+// .post(createUser);
 
-module.exports = router;
+// // /api/users/:userId
+// router.route('/:userId').get(getSingleUser);
 
 
-// get route for users
-router.route('/').get(getUsers).post(createUser);
-
-// get route for specific user, using id
-router.route('/:userId').get(getSingleUser).delete(deleteUser).put(updateUser);
+// // get route for specific user, using id
+// router.route('/:userId').get(getSingleUser).delete(deleteUser).put(updateUser);
 
 
 
-// delete route for users friend list 
-router.route('/:userId/friends/:friendsId').post(addFriend).delete(deleteFriend);
+// // delete route for users friend list 
+// router.route('/:userId/friends/:friendsId').post(addFriend).delete(deleteFriend);
 
 
 module.exports = router; 
