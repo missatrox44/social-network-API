@@ -11,7 +11,6 @@ const {
 
 // /api/users
 router.route('/').get(getUsers)
-
 // .post(createUser);
 
 // // /api/users/:userId
@@ -20,7 +19,6 @@ router.route('/').get(getUsers)
 
 // // get route for specific user, using id
 // router.route('/:userId').get(getSingleUser).delete(deleteUser).put(updateUser);
-
 
 
 // // delete route for users friend list 
