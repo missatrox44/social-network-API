@@ -1,16 +1,15 @@
 const user = [
-  'kyle7',
-  'sara4',
-  'archimedes',
-  'bagheera', 
-  'sylvester'
+  { username: 'kyle7', email: 'bananas@me.com' },
+  { username: 'sara4', email: 'apples@you.com' },
+  { username: 'archimedes', email: 'digginholes@bark.com' },
+  { username: 'bagheera', email: 'murderclaws@meow.com' },
+  { username: 'sylvester', email: 'whiskers@meow.com' },
 ]
 
 const thoughts = [
-  'you a baddy',
-  'you a thot',
-  'we all baddies',
-  'on weekends we thots'
+  { thoughtText: 'you a baddy', username: 'kyle7' },
+  { thoughtText: 'we all baddies', username: 'sara4' },
+  { thoughtText: 'he a thot', username: 'bagheera' },
 ]
 
 

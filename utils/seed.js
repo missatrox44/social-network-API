@@ -13,14 +13,11 @@ connection.once('open', async () => {
   //drop existing thoughts
   await Thoughts.deleteMany({});
 
-  // const users = [];
-  // const thoughts = [];
-
   //add user and thoughts seeds
-  await User.collection.insertMany(User);
-  await Thoughts.collection.insertMany(Thoughts);
+  await User.collection.insertMany(user);
+  await Thoughts.collection.insertMany(thoughts);
 
-  console.table(User);
+  console.table(user);
   console.info('Planted dem seeds!');
   process.exit(0);
 

@@ -1,10 +1,10 @@
-const User = require('../models');
+const { User } = require('../models');
 
 
 module.exports = {
   //getUsers
   getUsers(req, res) {
-    User.find()
+    User.find({})
       .then((users) => res.json(users))
       .catch((err) => res.status(500).json(err));
   },
