@@ -19,7 +19,7 @@
 // router.route('/:ThoughtId').get(getSingleThought).delete(deleteThought).put(updateThought);
 
 
-// // delete route for Thoughts friend list 
+// delete route for Thoughts friend list 
 // router.route('/:ThoughtId/Reactions/:ReactionId').post(addReaction).delete(deleteReaction);
 
 
