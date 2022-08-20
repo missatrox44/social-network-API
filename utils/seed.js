@@ -18,6 +18,7 @@ connection.once('open', async () => {
   await Thoughts.collection.insertMany(thoughts);
 
   console.table(user);
+  console.table(thoughts);
   console.info('Planted dem seeds!');
   process.exit(0);
 
