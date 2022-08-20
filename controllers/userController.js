@@ -12,6 +12,8 @@ module.exports = {
   getSingleUser(req, res) {
     User.findOne({ _id: req.params.userId })
       .select('-__v')
+      .populate('friends')
+      .populate('thoughts')
       .then((user) =>
         !user
           ? res.status(404).json({ message: 'No user with that ID' })
@@ -71,14 +73,14 @@ module.exports = {
       { $pull: { friends: { responseId: req.params.responseId } } },
       { runValidators: true, new: true }
     )
-    .then((user) =>
-    !user
-      ? res
-        .status(404)
-        .json({ message: 'No user with this ID' })
-      : res.json({ message: 'User successfully deleted!' })
-  )
-  .catch((err) => res.status(500).json(err));
+      .then((user) =>
+        !user
+          ? res
+            .status(404)
+            .json({ message: 'No user with this ID' })
+          : res.json({ message: 'User successfully deleted!' })
+      )
+      .catch((err) => res.status(500).json(err));
   },
 };
 
