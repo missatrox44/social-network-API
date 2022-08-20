@@ -44,7 +44,9 @@ module.exports = {
   },
   //deleteUser
   deleteUser(req, res) {
-    User.findOneAndRemove(req.body)
+    User.findOneAndRemove(
+      { _id: req.params.userId },
+    )
       .then((dbUserData) => res.json(dbUserData))
       .catch((err) => res.status(500).json(err));
   },
@@ -69,12 +71,14 @@ module.exports = {
       { $pull: { friends: { responseId: req.params.responseId } } },
       { runValidators: true, new: true }
     )
-      .then((user) =>
-        !user
-          ? res.status(404).json({ message: 'No user with this id!' })
-          : res.json(user)
-      )
-      .catch((err) => res.status(500).json(err));
+    .then((user) =>
+    !user
+      ? res
+        .status(404)
+        .json({ message: 'No user with this ID' })
+      : res.json({ message: 'User successfully deleted!' })
+  )
+  .catch((err) => res.status(500).json(err));
   },
 };
 
