@@ -17,6 +17,7 @@ const thoughtsSchema = new Schema({
       //default is virtuals
       // getters: true,
       virtuals: true,
+      getters: true
     },
     id: false,
   }

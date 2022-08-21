@@ -13,7 +13,8 @@ const reactionSchema = new Schema({
   {
     toJSON: {
       //use getters since there is get function in Schema ->createdAt
-      getters: true,
+      virtuals: true,
+      getters: true
     },
     id: false,
   }
