@@ -7,9 +7,9 @@ const user = [
 ]
 
 const thoughts = [
-  { thoughtText: 'you a baddy', username: 'kyle7' },
-  { thoughtText: 'we all baddies', username: 'sara4' },
-  { thoughtText: 'he a thot', username: 'bagheera' },
+  { thoughtText: 'brb gonna get swole', username: 'kyle7' },
+  { thoughtText: 'sorry, i need to practice trumpet', username: 'sara4' },
+  { thoughtText: 'did anyone order catnip?', username: 'bagheera' },
 ]
 
 

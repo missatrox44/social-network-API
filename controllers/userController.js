@@ -55,7 +55,7 @@ module.exports = {
       .then((dbUserData) => res.json(dbUserData))
       .catch((err) => res.status(500).json(err));
   },
-  //addFriend -- UNSURE IF CORRECT FUNCTION
+  //addFriend 
   addFriend(req, res) {
     User.findOneAndUpdate(
       { _id: req.params.userId },
@@ -69,7 +69,7 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
-  //deleteFriend -- UNSURE IF CORRECT FUNCTION
+  //deleteFriend
   deleteFriend(req, res) {
     User.findOneAndUpdate(
       { _id: req.params.userId },
@@ -81,7 +81,7 @@ module.exports = {
           ? res
             .status(404)
             .json({ message: 'No user with this ID' })
-          : res.json({ message: 'User successfully deleted!' })
+          : res.json({ message: 'Friend successfully deleted!' })
       )
       .catch((err) => res.status(500).json(err));
   },
