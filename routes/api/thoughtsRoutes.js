@@ -18,6 +18,7 @@ router.route('/:thoughtId').get(getSingleThought).delete(deleteThought).put(upda
 
 // delete route for Thoughts friend list 
 router.route('/:thoughtId/reactions').post(addReaction);
+
 router.route('/:thoughtId/reactions/:reactionId').delete(deleteReaction)
 // router.route('/:thoughtId/reactions/:reactionId').post(addReaction).delete(deleteReaction);
 
