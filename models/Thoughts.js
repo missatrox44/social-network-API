@@ -22,7 +22,6 @@ const thoughtsSchema = new Schema({
   }
 );
 
-
 //create virtual property for reactions count
 thoughtsSchema
   .virtual('reactionCount')
