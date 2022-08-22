@@ -1,10 +1,11 @@
 const { User } = require('../models');
+const { json } = require('express/lib/response');
 
 
 module.exports = {
   //getUsers
   getUsers(req, res) {
-    User.find({})
+    User.find()
       .then((users) => res.json(users))
       .catch((err) => res.status(500).json(err));
   },
@@ -71,7 +72,6 @@ module.exports = {
     User.findOneAndUpdate(
       { _id: req.params.userId },
       { $pull: { friends: req.params.friendsId } } ,
-      // { $pull: { friends: { responseId: req.params.responseId } } },
       { new: true }
     )
       .then((user) =>

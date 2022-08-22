@@ -15,12 +15,9 @@ router.route('/').get(getThoughts).post(createThought);
 // get route for specific Thought, using id
 router.route('/:thoughtId').get(getSingleThought).delete(deleteThought).put(updateThought);
 
-
 // delete route for Thoughts friend list 
 router.route('/:thoughtId/reactions').post(addReaction);
 
 router.route('/:thoughtId/reactions/:reactionId').delete(deleteReaction)
-// router.route('/:thoughtId/reactions/:reactionId').post(addReaction).delete(deleteReaction);
-
 
 module.exports = router; 
